@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tennivalók</title>
+    <script type="text/javascript">
+        function Hozzaad() {
+            var row = document.createElement("tr");
+            var cell1 = document.createElement("td");
+            var cell2 = document.createElement("td");
+            cell1.innerText = document.getElementById("nev").value;
+            cell2.innerText = document.getElementById("datum").value;
+            cell1.style.fontStyle = "italic";
+            row.appendChild(cell1);
+            row.appendChild(cell2);
+            switch (document.getElementById("fontossag").value) {
+                case 'nf' : row.style.backgroundColor = "lightblue"; break;
+                case 'n' : row.style.backgroundColor = "lightgray"; break;
+                case 'f': row.style.backgroundColor = "red"; break;
+            }
+            document.getElementById("tennivalok").appendChild(row);
+        }
+    </script>
+</head>
+<body>
+Megnevezés: <input type="text" id="nev"><br>
+Dátum: <input type="date" id="datum"><br>
+Fontosság:
+<select id="fontossag">
+    <option value="nf">nem fontos</option>
+    <option value="n">normál</option>
+    <option value="f">fontos</option>
+</select><br>
+<input type="button" value="Hozzáadás" onclick="Hozzaad()"><br>
+<table id="tennivalok" width="30%">
+     <tr><th>Megnevezés</th><th>Dátum</th></tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Számológép</title>
+    <script type="text/javascript">
+        function Kiszamol() {
+            var egyik = parseFloat(document.getElementById("elso").value) || 0;
+            var masik = parseFloat(document.getElementById("masodik").value) || 0;
+            var eredm = 0;
+            switch(document.getElementById("muv").value)
+            {
+                case '+': eredm = egyik + masik; break;
+                case '-': eredm = egyik - masik; break;
+                case '*': eredm = egyik * masik; break;
+                case '/': eredm = egyik / masik; break;
+            }
+            var tag = document.createElement("li");
+            tag.innerText = egyik.toString() + document.getElementById("muv").value + masik.toString() + " = " + eredm.toString();
+            document.getElementById("szamitasok").appendChild(tag);
+        }
+    </script>
+    <style>
+        body
+        {
+            background-color: skyblue;
+        }
+        ul
+        {
+            list-style-image: url("external_link.png");
+            font: 18pt Haettenschweiler;
+        }
+    </style>
+</head>
+<body>
+<input type="text" id="elso">
+<select id="muv">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+</select>
+<input type="text" id="masodik">
+<input type="button" value="Kiszámol" onclick="Kiszamol()">
+<ul id="szamitasok">
+</ul>
+</body>
+</html>

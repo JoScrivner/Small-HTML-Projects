@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="hun">
+<head>
+    <meta charset="UTF-8">
+    <title>Telekocsi</title>
+    <link href="telekocsi.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript">
+        function Ellenoriz(form) {
+            password1=form.password1.value;
+            password2=form.password2.value;
+            if (password1 == '')
+                alert ("Please enter Password");
+            else if (password2 == '')
+                alert ("Please enter confirm password");
+            else if (password1 != password2) {
+                alert ("\nPassword did not match: Please try again...")
+                return false;
+            }
+            // If same return True.
+            else{
+                alert("Password Match: Thank you for registering!")
+                return true;
+            }
+
+        }
+</script>
+
+</head>
+
+
+<body>
+<div class="tartalom">
+    <h1>Telekocsi</h1>
+    <div class="menu">
+        <table><tr><td><a href="telekocsi.html">Bemutatkozas</a></td><td>Soforoknek</td><td>Utasoknak</td><td>Bejelentkezes</td><td>Regisztracio</td></tr></table>
+    </div>
+    <div>
+        <h2>Regisztracio</h2>
+    </div>
+    <div>
+        <form onSubmit = "return Ellenoriz(this)">
+        <table id="table2">
+            <tr><td class="fekete">Nev:</td><td><input type="text" name="username"></td></tr>
+            <tr><td class="fekete">E-mail cim:</td><td><input type="text" name="email"></td></tr>
+            <tr><td class="fekete">Jelszo:</td><td><input type="password" name="password1"></td></tr>
+            <tr><td class="fekete">Jelszo ismet:</td><td><input type="password" name="password2"></td></tr>
+            <tr><td class="fekete"><input type="submit" name="login" value="Mentes"></td><td></td></tr>
+
+        </table>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

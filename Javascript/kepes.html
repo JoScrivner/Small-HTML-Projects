@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Képes példa</title>
+    <script type="text/javascript">
+        function Nagyit() {
+            document.getElementById("kep").height += 20;
+            document.getElementById("kep").width += 20;
+        }
+        function Kicsinyit() {
+            document.getElementById("kep").height -= 20;
+            document.getElementById("kep").width -= 20;
+        }
+
+    </script>
+</head>
+<body>
+    <img src="ford.png" id="kep" onmouseover="Nagyit()" onmouseleave="Kicsinyit()">
+</body>
+</html>

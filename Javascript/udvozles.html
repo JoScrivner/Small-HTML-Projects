@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Üdvözlés</title>
+    <script type="text/javascript">
+        function welcome() {
+            var h1 = document.getElementById("udvozles");
+            h1.innerText = "Üdvözöllek, " + document.getElementById("nev").value;
+            h1.style.color = randomColor();
+        }
+        function randomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i<6; i++)
+            {
+                color += letters[Math.floor(Math.random()*16)];
+            }
+            return color;
+        }
+    </script>
+</head>
+<body>
+    Neved: <input type="text" id="nev" oninput="welcome()">
+<h1 id="udvozles"></h1>
+</body>
+</html>
